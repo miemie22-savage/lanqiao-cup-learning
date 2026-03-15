@@ -1,0 +1,9 @@
+*.qws 
+*.json 
+db/ 
+incremental_db/ 
+output_files/ 
+*.fit.summary 
+*.rpt 
+*.sof 
+*.pin 
