@@ -8,3 +8,7 @@ git commit -m "新增test项目（计数器+数码管驱动）"
 
 # 3. 推送到 GitHub 云端
 git push
+
+
+https://www.mcublog.cn/software/2024_10/05_quartus-ii_pin_plan_set/
+讲pin 和 device的设置
