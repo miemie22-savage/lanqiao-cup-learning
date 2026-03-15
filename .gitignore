@@ -1,0 +1,18 @@
+# Quartus 临时文件
+*.flock
+*.rdr
+*.qws
+*.bak
+*.tmp
+db/
+incremental_db/
+output_files/
+# 编译产物
+*.sof
+*.pof
+*.jic
+*.rbf
+# 系统文件
+.DS_Store
+Thumbs.db
+*.log
