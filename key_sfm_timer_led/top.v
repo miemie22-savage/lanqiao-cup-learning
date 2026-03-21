@@ -49,6 +49,7 @@ state_control u_state(
   .unlocked(unlocked)
 );
 
+//实例化定定时器模块
 wire pulse_100ms;
 timer u_timer(
   .clk(clk),
@@ -60,21 +61,24 @@ timer u_timer(
 reg ld3_reg;
 always@(posedge clk or negedge rst_n)	begin
 	if(!rst_n)	begin
-		ld3_reg <= 1'b0;
+		ld3_reg <= 1'b1;		//1灭，0亮
 	end else begin
 		if(unlocked && !s4_db)	begin
 			if(pulse_100ms)
 				ld3_reg <= ~ld3_reg;
 		end else begin
-			ld3_reg <= 1'b0;
+			ld3_reg <= 1'b1;
 		end
 	end
 end
 
 always@(*)	begin		//不用*，用posedge clk or negedge rst_n可以吗
-	ld1 = unlocked;
-	ld2 = unlocked && !s3_db;
+	ld1 = ~unlocked;
+	ld2 = ~(unlocked && !s3_db);
 	ld3 = ld3_reg;
-	ld8 = locked;		//为啥不用<=
+	ld8 = ~locked;		//为啥不用<=
 end
+
+assign ld4 = rst_n;   // 临时添加
+
 endmodule

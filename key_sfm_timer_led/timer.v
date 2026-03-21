@@ -4,7 +4,7 @@ module timer(
 	output reg pulse
 );
 
-reg [23:1] cnt;
+reg [22:0] cnt;
 parameter MAX_CNT = 23'd7_999_999;
 
 always@(posedge clk or negedge rst)	begin
